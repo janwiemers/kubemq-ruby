@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name    = 'kubemq_ruby'
+  s.name    = 'kubemq'
   s.authors = ["Jan Wiemers"]
   s.email   = "jan@anne-jan.de"
   s.version = "0.1.0"
@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.summary = 'A library to handle kubemq in ruby'
   s.license = "MIT"
   s.files   = [
-    "lib/kubemq_ruby.rb"
+    "lib/kubemq.rb"
   ]
   s.require_paths = ["lib"]
   s.required_ruby_version = ">= 2.5.0"
