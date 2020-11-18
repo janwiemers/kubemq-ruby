@@ -12,7 +12,7 @@ module Kubemq
 
     def self.list
       url = "#{Kubemq::Helper.base_url}/queue/list"
-      r = HTTParty.get(url, headers: Kubemq::Helper.default_content_type)
+      r = HTTParty.post(url, headers: Kubemq::Helper.default_content_type)
       puts r.parsed_response 
     end
 
