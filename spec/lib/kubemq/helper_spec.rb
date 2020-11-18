@@ -23,5 +23,17 @@ RSpec.describe Kubemq do
         Kubemq.tls = v
       end
     end
+
+    describe '.base_url' do
+      it 'should have a default url' do
+        expect(Kubemq::Helper.base_url).to eq("https://#{Kubemq.host}:#{Kubemq.port}")
+      end
+
+      it 'should honor initializer' do
+        Kubemq.host = ENV.fetch('KUBEMQ_HOST')
+        Kubemq.port = ENV.fetch('KUBEMQ_PORT')
+        expect(Kubemq::Helper.base_url).to eq("https://#{ENV.fetch('KUBEMQ_HOST')}:#{ENV.fetch('KUBEMQ_PORT')}")
+      end
+    end
   end
 end

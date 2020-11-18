@@ -3,10 +3,24 @@ services:
 
   app:
     image: janwiemers/ruby-docker-dev:latest
+    env_file: development.env
+    depends_on:
+      - kubemq
     volumes:
       - gems_path:/usr/local/bundle
       - ./:/app
       - ~/.gem/credentials:/root/.gem/credentials
 
+  kubemq:
+    image: kubemq/kubemq:latest
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+      - "50000:50000"
+    env_file: development.env
+    volumes:
+      - kubemq:/store
+
 volumes:
   gems_path:
+  kubemq:

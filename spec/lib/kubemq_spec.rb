@@ -14,14 +14,20 @@ RSpec.describe Kubemq do
   end
 
   describe 'Default' do
-
-
     it 'should have an empty namespace' do
       expect(Kubemq.namespace).to eq('')
     end
 
     it 'should be tls' do
       expect(Kubemq.tls).to be_truthy
+    end
+
+    it 'should be localhost' do
+      expect(Kubemq.host).to be('localhost')
+    end
+
+    it 'should be 9090' do
+      expect(Kubemq.port).to eq('9090')
     end
   end
 end

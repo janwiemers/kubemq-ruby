@@ -6,8 +6,8 @@ require 'kubemq/version'
 
 module Kubemq
   class << self
-    mattr_accessor :host, default: nil
-    mattr_accessor :port, default: nil
+    mattr_accessor :host, default: 'localhost'
+    mattr_accessor :port, default: 9090
     mattr_accessor :user, default: nil
     mattr_accessor :password, default: nil
     mattr_accessor :tls, default: true

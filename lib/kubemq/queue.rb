@@ -6,8 +6,14 @@ module Kubemq
   module Queue
     def self.add(message:, channel: 'test')
       payload = build_payload(message: message, channel: channel)
-      url = "#{Kubemq::Helper.protocol}://#{Kubemq.host}:#{Kubemq.port}/queue/send"
+      url = "#{Kubemq::Helper.base_url}/queue/send"
       HTTParty.post(url, headers: Kubemq::Helper.default_content_type, body: payload)
+    end
+
+    def self.list
+      url = "#{Kubemq::Helper.base_url}/queue/list"
+      r = HTTParty.get(url, headers: Kubemq::Helper.default_content_type)
+      puts r.parsed_response 
     end
 
     def self.build_payload(message:, channel:)

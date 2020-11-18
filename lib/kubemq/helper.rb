@@ -9,5 +9,9 @@ module Kubemq
     def self.protocol
       Kubemq.tls ? 'https' : 'http'
     end
+
+    def self.base_url
+      url = "#{Kubemq::Helper.protocol}://#{Kubemq.host}:#{Kubemq.port}"
+    end
   end
 end
