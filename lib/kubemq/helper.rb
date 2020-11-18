@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Kubemq
   module Helper
     def self.default_content_type
@@ -5,7 +7,7 @@ module Kubemq
     end
 
     def self.protocol
-      Kubemq.ssl ? 'https' : 'http'
+      Kubemq.tls ? 'https' : 'http'
     end
   end
 end

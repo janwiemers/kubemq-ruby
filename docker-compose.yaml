@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+
+  app:
+    image: janwiemers/ruby-docker-dev:latest
+    volumes:
+      - gems_path:/usr/local/bundle
+      - ./:/app
+      - ~/.gem/credentials:/root/.gem/credentials
+
+volumes:
+  gems_path:

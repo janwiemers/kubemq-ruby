@@ -1,0 +1,11 @@
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.5
+  Exclude:
+    - 'gems/**/*'
+    - 'specifications/**/*'
+    - 'bin/**/*'
+
+Style/Documentation:
+  Enabled: false
+

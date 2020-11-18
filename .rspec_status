@@ -1,0 +1,10 @@
+example_id                                | status | run_time        |
+----------------------------------------- | ------ | --------------- |
+./spec/lib/kubemq/helper_spec.rb[1:1:1:1] | passed | 0.00398 seconds |
+./spec/lib/kubemq/helper_spec.rb[1:1:2:1] | passed | 0.00009 seconds |
+./spec/lib/kubemq/helper_spec.rb[1:1:2:2] | passed | 0.00007 seconds |
+./spec/lib/kubemq/helper_spec.rb[1:1:2:3] | passed | 0.0001 seconds  |
+./spec/lib/kubemq/queue_spec.rb[1:1:1]    | passed | 0.02278 seconds |
+./spec/lib/kubemq/version_spec.rb[1:1:1]  | passed | 0.01444 seconds |
+./spec/lib/kubemq_spec.rb[1:1:1]          | passed | 0.00011 seconds |
+./spec/lib/kubemq_spec.rb[1:1:2]          | passed | 0.01275 seconds |
