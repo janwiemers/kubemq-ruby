@@ -4,7 +4,7 @@ require 'httparty'
 
 module Kubemq
   module Queue
-    def self.add(message, channel = 'test')
+    def self.add(message, channel)
       payload = build_payload(message, channel)
       url = "#{Kubemq::Helper.base_url}/queue/send"
       HTTParty.post(url, headers: Kubemq::Helper.default_content_type, body: payload)
