@@ -5,6 +5,8 @@ require 'httparty'
 module Kubemq
   module Queue
     def self.add(message:, channel: 'test')
+      puts message.inspect
+      puts channel.inspect
       payload = build_payload(message: message, channel: channel)
       url = "#{Kubemq::Helper.base_url}/queue/send"
       HTTParty.post(url, headers: Kubemq::Helper.default_content_type, body: payload)
@@ -17,8 +19,6 @@ module Kubemq
     end
 
     def self.build_payload(message:, channel:)
-      puts message.inspect
-      puts channel.inspect
       { "ClientId": Kubemq.client_id,
         "Channel": "#{Kubemq.namespace}.#{channel}",
         "Body": Base64.encode64(message),
