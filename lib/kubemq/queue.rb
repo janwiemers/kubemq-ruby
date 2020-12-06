@@ -13,10 +13,12 @@ module Kubemq
     def self.list
       url = "#{Kubemq::Helper.base_url}/queue/list"
       r = HTTParty.post(url, headers: Kubemq::Helper.default_content_type)
-      puts r.parsed_response 
+      puts r.parsed_response
     end
 
     def self.build_payload(message:, channel:)
+      puts message.inspect
+      puts channel.inspect
       { "ClientId": Kubemq.client_id,
         "Channel": "#{Kubemq.namespace}.#{channel}",
         "Body": Base64.encode64(message),
